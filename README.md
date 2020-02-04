@@ -1,2 +1,2 @@
 # ResizeCounter
-![Link to Glitch website](https://jasontsemf-resizecounter.glitch.me/)
+[Link to Glitch website](https://jasontsemf-resizecounter.glitch.me/)
