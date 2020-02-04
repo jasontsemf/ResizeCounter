@@ -1,4 +1,5 @@
 let count = 0;
+let target = 100;
 
 function reportWindowSize() {
     // $("#height").html(window.innerHeight);
@@ -8,7 +9,7 @@ function reportWindowSize() {
         $(this).text(count).fadeIn("fast");
     });
     console.log("window resize fired");
-    if (count >= 200) {
+    if (count >= target) {
         window.close();
         $("#count").fadeOut(function () {
             $(this).text("RELEASE").fadeIn("fast");
