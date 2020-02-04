@@ -1,5 +1,6 @@
 let count = 0;
 let target = 100;
+let canRestart = false;
 
 function reportWindowSize() {
     // $("#height").html(window.innerHeight);
@@ -8,13 +9,21 @@ function reportWindowSize() {
     $("#count").fadeOut(function () {
         $(this).text(count).fadeIn("fast");
     });
-    console.log("window resize fired");
     if (count >= target) {
-        window.close();
+        // window.close();
         $("#count").fadeOut(function () {
-            $(this).text("RELEASE").fadeIn("fast");
+            $(this).text("CLICK ME").fadeIn("fast");
         });
-        $("body").css({"background-color": "yellow"});
+        $("body").css({
+            "background-color": "yellow"
+        });
+        canRestart = true;
+    }
+}
+
+function restart() {
+    if (canRestart) {
+        location.reload();
     }
 }
 
@@ -24,3 +33,4 @@ $(document).ready(function () {
 });
 
 window.onresize = reportWindowSize;
+window.onclick = restart;
